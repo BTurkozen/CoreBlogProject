@@ -1,0 +1,56 @@
+﻿@model List<Category>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+
+<div class="container-fluid">
+    <table data-table="true" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    Category Id
+                </th>
+                <th>
+                    Category Name
+                </th>
+                <th>
+                    Slug
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CategoryId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CategoryName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Slug)
+                    </td>
+                    <td>
+                        <a asp-controller="Categories" asp-action="Edit" asp-route-id="@item.CategoryId" class="btn btn-outline-dark "><i class="fas fa-edit"></i></a>
+                        <a href="#" class="btn btn-danger" data-delete-id="@item.CategoryId" data-delete-name="@item.CategoryName" data-delete-action="@Url.Action("Delete")">
+                            <i class="fas fa-trash"></i>
+                        </a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a asp-action="Create" class="btn btn-outline-dark my-3 float-right">Create New</a>
+</div>
+
+<partial name="_DeleteModalPartial" />
+

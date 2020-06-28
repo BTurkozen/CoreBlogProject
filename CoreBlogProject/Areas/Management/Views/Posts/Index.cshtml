@@ -1,0 +1,73 @@
+﻿@model IEnumerable<CoreBlogProject.Models.Post>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="my-2">
+    <a asp-action="Create" class="btn btn-outline-primary">Create New</a>
+</div>
+<div class="container-fluid">
+    <table data-table="true" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CategoryId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Content)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PhotoPath)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AddTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EditTime)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td width="10%">
+                        @Html.DisplayFor(modelItem => item.Category.CategoryName)
+                    </td>
+                    <td width="15%">
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Content)
+                    </td>
+                    <td width="15%">
+                        <img src="~/Images/@item.PhotoPath" width="200" alt="Alternate Text" />
+                    </td>
+                    <td width="10%">
+                        @Html.DisplayFor(modelItem => item.AddTime)
+                    </td>
+                    <td width="10%">
+                        @Html.DisplayFor(modelItem => item.EditTime)
+                    </td>
+                    <td width="8%">
+                        <a asp-controller="Posts" asp-action="Edit" asp-route-id="@item.PostId" class="btn btn-outline-dark "><i class="fas fa-edit"></i></a>
+                        <a href="#" class="btn btn-danger" data-delete-id="@item.PostId" data-delete-name="@item.Title" data-delete-action="@Url.Action("Delete")">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+<partial name="_DeleteModalPartial" />

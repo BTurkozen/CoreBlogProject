@@ -1,0 +1,47 @@
+﻿@model CategoryViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container-fluid">
+
+    <div class="col-md-8 ml-5">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="CategoryName" class="control-label"></label>
+                <input asp-for="CategoryName" class="form-control" />
+                <span asp-validation-for="CategoryName" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <div class="ml-2">
+                    @Html.LabelFor(x => x.Slug)
+                </div>
+                <div class="form-inline">
+                    @Html.TextBoxFor(x => x.Slug, new { @class = "form-control flex-fill", placeholder = "a-sample-url" })
+                    <a id="refreshSlug" href="#" class="mx-1 text-secondary btn btn-default"><i class="fas fa-sync-alt"></i></a>
+                    @Html.ValidationMessageFor(x => x.Slug, null, new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <a asp-action="Index" class="btn btn-outline-dark">Back to List</a>
+                <input type="submit" value="Create" class="btn btn-outline-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        slug.run("#CategoryName", "#Slug", "#refreshSlug");
+
+    </script>
+}
+
