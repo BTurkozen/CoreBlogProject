@@ -8,6 +8,8 @@ using Microsoft.Extensions.Logging;
 using CoreBlogProject.Models;
 using CoreBlogProject.Repositories;
 using CoreBlogProject.Interfaces;
+using CoreBlogProject.ViewModels;
+using CoreBlogProject.Models.Comment;
 
 namespace CoreBlogProject.Controllers
 {
@@ -22,11 +24,46 @@ namespace CoreBlogProject.Controllers
             _logger = logger;
             _postRepository = postRepository;
             _fileManager = fileManager;
+            var comment = new MainComment();
+
         }
 
         public IActionResult Index()
         {
             return View(_postRepository.AllPosts);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Comment(CommentViewModel cvm)
+        {
+            if (!ModelState.IsValid)
+                return RedirectToAction("Post", new { id=cvm.PostId });
+
+            var post = _postRepository.GetPostId(cvm.PostId);
+            if (cvm.MainCommentId > 0)
+            {
+                post.MainComments = post.MainComments ?? new List<MainComment>();
+                post.MainComments.Add(new MainComment
+                {
+                    Message = cvm.Message,
+                    CreateTime = DateTime.Now
+
+                });
+                _postRepository.UpdatePost(post);
+            }
+            else
+            {
+                var comment = new SubComment
+                {
+                    MainCommentId = cvm.MainCommentId,
+                    Message = cvm.Message,
+                    CreateTime = DateTime.Now
+                };
+            }
+            await _postRepository.SaveChangesAsync();
+
+            return View();
         }
 
         public IActionResult Details(int id)

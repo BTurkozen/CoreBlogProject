@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoreBlogProject.Models.Comment;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -29,5 +30,7 @@ namespace CoreBlogProject.Models
         public DateTime? AddTime { get; set; }
         public DateTime? EditTime { get; set; }
         public virtual Category Category { get; set; }
+
+        public List<MainComment> MainComments { get; set; }
     }
 }

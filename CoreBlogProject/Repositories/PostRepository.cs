@@ -1,6 +1,7 @@
 ﻿using CoreBlogProject.Data;
 using CoreBlogProject.Interfaces;
 using CoreBlogProject.Models;
+using CoreBlogProject.Models.Comment;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -22,8 +23,7 @@ namespace CoreBlogProject.Repositories
 
         public Post GetPostId(int postId)
         {
-            return _dbContext.Posts.FirstOrDefault(x => x.PostId == postId);
-            //comment eklendıgınde include(x => x.Comment)
+            return _dbContext.Posts.Include(p => p.MainComments).ThenInclude(mc => mc.SubComments).FirstOrDefault(x => x.PostId == postId);
         }
 
         public List<Post> AllPosts => _dbContext.Posts.Include(x => x.Category).ToList();
@@ -56,5 +56,9 @@ namespace CoreBlogProject.Repositories
             return false;
         }
 
+        public void AddComment(SubComment comment)
+        {
+            _dbContext.SubComments.Add(comment);
+        }
     }
 }

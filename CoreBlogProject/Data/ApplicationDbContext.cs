@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using CoreBlogProject.Models;
+using CoreBlogProject.Models.Comment;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +19,8 @@ namespace CoreBlogProject.Data
 
         public DbSet<Post> Posts { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<MainComment> MainComments { get; set; }
+        public DbSet<SubComment> SubComments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
