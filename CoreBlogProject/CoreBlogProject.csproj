@@ -11,12 +11,22 @@
     <Compile Remove="Data\Migrations\20200621095129_initial.Designer.cs" />
     <Compile Remove="Data\Migrations\20200627201129_addedRoles.cs" />
     <Compile Remove="Data\Migrations\20200627201129_addedRoles.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200628221423_CommentSection.cs" />
+    <Compile Remove="Data\Migrations\20200628221423_CommentSection.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200629110454_commentSectionTwo.cs" />
+    <Compile Remove="Data\Migrations\20200629110454_commentSectionTwo.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200629121055_commentPostId.cs" />
+    <Compile Remove="Data\Migrations\20200629121055_commentPostId.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200629162645_pageNumberAdded.cs" />
+    <Compile Remove="Data\Migrations\20200629162645_pageNumberAdded.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="cloudscribe.Web.Pagination" Version="3.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.5" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.5" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.5">

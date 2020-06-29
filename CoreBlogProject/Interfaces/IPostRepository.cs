@@ -1,5 +1,6 @@
 ﻿using CoreBlogProject.Models;
 using CoreBlogProject.Models.Comment;
+using CoreBlogProject.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

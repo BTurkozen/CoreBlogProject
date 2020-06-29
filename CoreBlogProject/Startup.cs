@@ -15,6 +15,7 @@ using Microsoft.Extensions.Hosting;
 using CoreBlogProject.Repositories;
 using CoreBlogProject.Interfaces;
 using Microsoft.Extensions.Options;
+using CoreBlogProject.Models;
 
 namespace CoreBlogProject
 {
@@ -53,6 +54,9 @@ namespace CoreBlogProject
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddMvcCore();
+            services.AddCloudscribePagination();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -69,9 +73,11 @@ namespace CoreBlogProject
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+          
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSession();
+           
 
             app.UseRouting();
 
@@ -91,6 +97,7 @@ namespace CoreBlogProject
 
                 endpoints.MapRazorPages();
             });
+
         }
     }
 }

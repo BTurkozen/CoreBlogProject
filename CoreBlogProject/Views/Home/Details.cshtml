@@ -13,39 +13,10 @@
                         <h1 class="mb-3">@Model.Title</h1>
                         <div class="meta-wrap">
                             <p class="meta">
-                                <span><i class="icon-calendar mr-2"></i>@Model.AddTime</span> @*ToString("Y")*@
-                                <span>
-                                    <a href="single.html">
-                                        <i class="icon-folder-o mr-2"></i>@*@Model.Category.CategoryName*@ @*İnjectionla buraya category name enjekte edılecek.*@
-                                    </a>
-                                </span>
-                                <span><i class="icon-comment2 mr-2"></i>5 Comment</span>
+                                <span><i class="icon-calendar mr-2"></i>@Model.AddTime</span>
                             </p>
                         </div>
                         <p>@Model.Content</p>
-
-
-                        <div class="about-author d-flex p-4 bg-light">
-                            <div class="bio mr-5">
-                                <img src="images/person_1.jpg" alt="Image placeholder" class="img-fluid mb-4">
-                            </div>
-                            <div class="desc">
-                                <h3>AUTHOR</h3>
-                                <p>Yazar hakkında bilgilendirme</p>
-                            </div>
-                        </div>
-                        <div>
-
-                            @{
-                                await Html.RenderPartialAsync("_Comment", new CommentViewModel { PostId = Model.PostId, MainCommentId = 0 });
-                            }
-                            @foreach (var c in Model.MainComments)
-                            {
-                            <p>
-                                @c.Message ---- @c.CreateTime
-                            </p>
-                            }
-                        </div>
                     </div><!-- END-->
                 </div>
             </div>

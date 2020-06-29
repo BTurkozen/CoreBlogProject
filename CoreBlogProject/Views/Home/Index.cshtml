@@ -1,30 +1,28 @@
-﻿@model List<Post>
+﻿@model cloudscribe.Pagination.Models.PagedResult<Post>
 @{
     ViewData["Title"] = "Home Page";
 }
 
 
-@foreach (var post in Model)
+
+@foreach (var post in Model.Data)
 {
 
     <partial name="_PostContentPartial" model="post" />
 
 }
 
-@*Sayfalandırma işlemleri burada yapılacak*@
-
-<div class="row colorlib-footer">
-    <div class="col">
-        <div class="block-27">
-            <ul>
-                <li><a href="#">&lt;</a></li>
-                <li class="active"><span>1</span></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">&gt;</a></li>
-            </ul>
-        </div>
-    </div>
+<div class="offset-6">
+    <cs-pager cs-paging-pagenumber=Model.PageNumber
+              cs-paging-totalitems=Model.TotalItems
+              cs-paging-pagesize=Model.PageSize
+              asp-controller="Home"
+              asp-action="Index"
+              cs-pager-li-current-class="page-item active"
+              cs-pager-li-other-class="page-item"
+              cs-pager-li-non-active-class="page-item disabled"
+              cs-pager-link-current-class="page-link"
+              cs-pager-link-other-class="page-link">
+    </cs-pager>
 </div>
+

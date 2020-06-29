@@ -36,8 +36,6 @@ namespace CoreBlogProject.Areas.Management.Controllers
             return View(_postRepository.AllPosts);
         }
 
-     
-
         public IActionResult Create()
         {
             ViewBag.CategoryId = new SelectList(_categoryRepository.AllCategories.OrderBy(x => x.CategoryName), "CategoryId", "CategoryName");

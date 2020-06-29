@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CoreBlogProject.Data.Migrations
 {
-    public partial class CommentSection : Migration
+    public partial class commentAdded : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -54,42 +54,42 @@ namespace CoreBlogProject.Data.Migrations
                 keyColumn: "PostId",
                 keyValue: 1,
                 columns: new[] { "AddTime", "EditTime" },
-                values: new object[] { new DateTime(2020, 6, 29, 1, 14, 22, 590, DateTimeKind.Local).AddTicks(273), new DateTime(2020, 6, 29, 1, 14, 22, 591, DateTimeKind.Local).AddTicks(1306) });
+                values: new object[] { new DateTime(2020, 6, 29, 15, 4, 10, 983, DateTimeKind.Local).AddTicks(6053), new DateTime(2020, 6, 29, 15, 4, 10, 984, DateTimeKind.Local).AddTicks(5601) });
 
             migrationBuilder.UpdateData(
                 table: "Posts",
                 keyColumn: "PostId",
                 keyValue: 2,
                 columns: new[] { "AddTime", "EditTime" },
-                values: new object[] { new DateTime(2020, 6, 29, 1, 14, 22, 591, DateTimeKind.Local).AddTicks(2384), new DateTime(2020, 6, 29, 1, 14, 22, 591, DateTimeKind.Local).AddTicks(2398) });
+                values: new object[] { new DateTime(2020, 6, 29, 15, 4, 10, 984, DateTimeKind.Local).AddTicks(6566), new DateTime(2020, 6, 29, 15, 4, 10, 984, DateTimeKind.Local).AddTicks(6580) });
 
             migrationBuilder.UpdateData(
                 table: "Posts",
                 keyColumn: "PostId",
                 keyValue: 3,
                 columns: new[] { "AddTime", "EditTime" },
-                values: new object[] { new DateTime(2020, 6, 29, 1, 14, 22, 591, DateTimeKind.Local).AddTicks(2458), new DateTime(2020, 6, 29, 1, 14, 22, 591, DateTimeKind.Local).AddTicks(2461) });
+                values: new object[] { new DateTime(2020, 6, 29, 15, 4, 10, 984, DateTimeKind.Local).AddTicks(6636), new DateTime(2020, 6, 29, 15, 4, 10, 984, DateTimeKind.Local).AddTicks(6639) });
 
             migrationBuilder.UpdateData(
                 table: "Posts",
                 keyColumn: "PostId",
                 keyValue: 4,
                 columns: new[] { "AddTime", "EditTime" },
-                values: new object[] { new DateTime(2020, 6, 29, 1, 14, 22, 591, DateTimeKind.Local).AddTicks(2494), new DateTime(2020, 6, 29, 1, 14, 22, 591, DateTimeKind.Local).AddTicks(2496) });
+                values: new object[] { new DateTime(2020, 6, 29, 15, 4, 10, 984, DateTimeKind.Local).AddTicks(6671), new DateTime(2020, 6, 29, 15, 4, 10, 984, DateTimeKind.Local).AddTicks(6673) });
 
             migrationBuilder.UpdateData(
                 table: "Posts",
                 keyColumn: "PostId",
                 keyValue: 5,
                 columns: new[] { "AddTime", "EditTime" },
-                values: new object[] { new DateTime(2020, 6, 29, 1, 14, 22, 591, DateTimeKind.Local).AddTicks(2527), new DateTime(2020, 6, 29, 1, 14, 22, 591, DateTimeKind.Local).AddTicks(2529) });
+                values: new object[] { new DateTime(2020, 6, 29, 15, 4, 10, 984, DateTimeKind.Local).AddTicks(6702), new DateTime(2020, 6, 29, 15, 4, 10, 984, DateTimeKind.Local).AddTicks(6704) });
 
             migrationBuilder.UpdateData(
                 table: "Posts",
                 keyColumn: "PostId",
                 keyValue: 6,
                 columns: new[] { "AddTime", "EditTime" },
-                values: new object[] { new DateTime(2020, 6, 29, 1, 14, 22, 591, DateTimeKind.Local).AddTicks(2565), new DateTime(2020, 6, 29, 1, 14, 22, 591, DateTimeKind.Local).AddTicks(2567) });
+                values: new object[] { new DateTime(2020, 6, 29, 15, 4, 10, 984, DateTimeKind.Local).AddTicks(6738), new DateTime(2020, 6, 29, 15, 4, 10, 984, DateTimeKind.Local).AddTicks(6740) });
 
             migrationBuilder.CreateIndex(
                 name: "IX_MainComments_PostId",

@@ -29,6 +29,7 @@ namespace CoreBlogProject.Models
         [Required]
         public DateTime? AddTime { get; set; }
         public DateTime? EditTime { get; set; }
+
         public virtual Category Category { get; set; }
 
         public List<MainComment> MainComments { get; set; }

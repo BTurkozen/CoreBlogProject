@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CoreBlogProject.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200628221423_CommentSection")]
-    partial class CommentSection
+    [Migration("20200629121227_commentPostId")]
+    partial class commentPostId
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -76,7 +76,7 @@ namespace CoreBlogProject.Data.Migrations
                     b.Property<string>("Message")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("PostId")
+                    b.Property<int>("PostId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -152,10 +152,10 @@ namespace CoreBlogProject.Data.Migrations
                         new
                         {
                             PostId = 1,
-                            AddTime = new DateTime(2020, 6, 29, 1, 14, 22, 590, DateTimeKind.Local).AddTicks(273),
+                            AddTime = new DateTime(2020, 6, 29, 15, 12, 27, 486, DateTimeKind.Local).AddTicks(8511),
                             CategoryId = 1,
                             Content = "Mükemmel bir web tasarımınız olabilir ama tüm cihazlara uyumlu değilse eksiktir. Projenizi kim, hangi cihazdan ziyaret edecek bilemezsiniz. Responsive tasarım, web sitesinin mobil ve cihazlara uyumlu oluşu sitenizi ziyaret eden kullanıcılara kullanım kolaylığı sağlar. Günümüzde internet kullanıcılarının % 70 i mobil cihazlardan gezinti yapıyor ve başta Google olmak üzere tüm arama motorları mobil uyumlu web sitelerine sıralamalarında öncelik tanımaktadır.Güncel tüm tarayıcılar, tabletler, mobil, her biri için web tasarımı, ekran genişliğine ve çözünürlüğüne göre şekillendirilir böylece ekrana tam uyum sağlar.Kısacası kalıplaşmış mobil tasarımlar değil, projenize uyumlu tasarımlar.Ayrı ayrı veri tabanı yok.Tüm tasarımlar aynı panelden güncellenir.Hatta dilerseniz bambaşka bir responsive tasarımı... İnternete özel web tasarım projesinin yanında, isterseniz mobillere özel tasarımlar yapabiliriz. Yenilikçi bir web sayfasına sahip olmak için responsive tasarım önemlidir.Kullanım kolaylığı için tasarımın birbirinden farklı olan ekran çözünürlüklerine uyum sağlaması önemlidir.Web sitenizdeki kusursuz tasarım diğer cihazlarda da farklılaşarak kusursuz olmalıdır.Menüler girilen cihaza uyum sağlayacak şekilde küçülüp üzerine dokunulduğunda açılmalı, metinler rahat okunmalı, resimler de ekran çözünürlüğüne göre esneyerek uygun tasarım elde edilmelidir. Tüm ticari şirketlerin web sitesi tasarımından beklentisi arama motorlarında üst sırada yer almak olduğuna göre artık responsive(mobil uyumluluk) vazgeçilmez bir ihtiyaç haline gelmiştir.Tekdüze olmayın, farklı olursanız farklı kalabilirsiniz.İyi görünmek için Atamedya ile çalışabilirsiniz..",
-                            EditTime = new DateTime(2020, 6, 29, 1, 14, 22, 591, DateTimeKind.Local).AddTicks(1306),
+                            EditTime = new DateTime(2020, 6, 29, 15, 12, 27, 488, DateTimeKind.Local).AddTicks(680),
                             PhotoPath = "~/Images/mbUws.jpg",
                             Slug = "mobil-uyumlu-web-sitesi",
                             Title = "Mobil uyumlu web sitesi"
@@ -163,10 +163,10 @@ namespace CoreBlogProject.Data.Migrations
                         new
                         {
                             PostId = 2,
-                            AddTime = new DateTime(2020, 6, 29, 1, 14, 22, 591, DateTimeKind.Local).AddTicks(2384),
+                            AddTime = new DateTime(2020, 6, 29, 15, 12, 27, 488, DateTimeKind.Local).AddTicks(1894),
                             CategoryId = 1,
                             Content = "dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.",
-                            EditTime = new DateTime(2020, 6, 29, 1, 14, 22, 591, DateTimeKind.Local).AddTicks(2398),
+                            EditTime = new DateTime(2020, 6, 29, 15, 12, 27, 488, DateTimeKind.Local).AddTicks(1909),
                             PhotoPath = "~/Images/bootsrap.jpg",
                             Slug = "bootstrap-kullanmak-için-10-sebep",
                             Title = "Bootstrap Kullanmak İçin 10 Sebep"
@@ -174,10 +174,10 @@ namespace CoreBlogProject.Data.Migrations
                         new
                         {
                             PostId = 3,
-                            AddTime = new DateTime(2020, 6, 29, 1, 14, 22, 591, DateTimeKind.Local).AddTicks(2458),
+                            AddTime = new DateTime(2020, 6, 29, 15, 12, 27, 488, DateTimeKind.Local).AddTicks(1967),
                             CategoryId = 2,
                             Content = "dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.",
-                            EditTime = new DateTime(2020, 6, 29, 1, 14, 22, 591, DateTimeKind.Local).AddTicks(2461),
+                            EditTime = new DateTime(2020, 6, 29, 15, 12, 27, 488, DateTimeKind.Local).AddTicks(1970),
                             PhotoPath = "~/Images/bootsrap.jpg",
                             Slug = "asp.net-core-ile-crud-islemleri",
                             Title = "ASP.NET Core ile CRUD işlemleri"
@@ -185,10 +185,10 @@ namespace CoreBlogProject.Data.Migrations
                         new
                         {
                             PostId = 4,
-                            AddTime = new DateTime(2020, 6, 29, 1, 14, 22, 591, DateTimeKind.Local).AddTicks(2494),
+                            AddTime = new DateTime(2020, 6, 29, 15, 12, 27, 488, DateTimeKind.Local).AddTicks(2001),
                             CategoryId = 2,
                             Content = "dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.",
-                            EditTime = new DateTime(2020, 6, 29, 1, 14, 22, 591, DateTimeKind.Local).AddTicks(2496),
+                            EditTime = new DateTime(2020, 6, 29, 15, 12, 27, 488, DateTimeKind.Local).AddTicks(2003),
                             PhotoPath = "~/Images/bootsrap.jpg",
                             Slug = "vuejs-baslangic",
                             Title = "VUEjs Başlangıç"
@@ -196,10 +196,10 @@ namespace CoreBlogProject.Data.Migrations
                         new
                         {
                             PostId = 5,
-                            AddTime = new DateTime(2020, 6, 29, 1, 14, 22, 591, DateTimeKind.Local).AddTicks(2527),
+                            AddTime = new DateTime(2020, 6, 29, 15, 12, 27, 488, DateTimeKind.Local).AddTicks(2033),
                             CategoryId = 3,
                             Content = "dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.",
-                            EditTime = new DateTime(2020, 6, 29, 1, 14, 22, 591, DateTimeKind.Local).AddTicks(2529),
+                            EditTime = new DateTime(2020, 6, 29, 15, 12, 27, 488, DateTimeKind.Local).AddTicks(2035),
                             PhotoPath = "~/Images/bootsrap.jpg",
                             Slug = "asp.net-core-ile-kurumsal-islemleri",
                             Title = "ASP.NET Core ile Kurumsal İşlemler"
@@ -207,10 +207,10 @@ namespace CoreBlogProject.Data.Migrations
                         new
                         {
                             PostId = 6,
-                            AddTime = new DateTime(2020, 6, 29, 1, 14, 22, 591, DateTimeKind.Local).AddTicks(2565),
+                            AddTime = new DateTime(2020, 6, 29, 15, 12, 27, 488, DateTimeKind.Local).AddTicks(2070),
                             CategoryId = 3,
                             Content = "dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.",
-                            EditTime = new DateTime(2020, 6, 29, 1, 14, 22, 591, DateTimeKind.Local).AddTicks(2567),
+                            EditTime = new DateTime(2020, 6, 29, 15, 12, 27, 488, DateTimeKind.Local).AddTicks(2072),
                             PhotoPath = "~/Images/bootsrap.jpg",
                             Slug = "vuejs-kurumsal",
                             Title = "VUEjs Kurumsal"
@@ -419,15 +419,17 @@ namespace CoreBlogProject.Data.Migrations
 
             modelBuilder.Entity("CoreBlogProject.Models.Comment.MainComment", b =>
                 {
-                    b.HasOne("CoreBlogProject.Models.Post", null)
+                    b.HasOne("CoreBlogProject.Models.Post", "Post")
                         .WithMany("MainComments")
-                        .HasForeignKey("PostId");
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("CoreBlogProject.Models.Comment.SubComment", b =>
                 {
                     b.HasOne("CoreBlogProject.Models.Comment.MainComment", null)
-                        .WithMany("SubComment")
+                        .WithMany("SubComments")
                         .HasForeignKey("MainCommentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
