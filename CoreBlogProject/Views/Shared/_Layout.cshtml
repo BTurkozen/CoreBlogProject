@@ -35,8 +35,9 @@
                     <li class="colorlib-active">
                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a asp-controller="About" asp-action="Index">About</a></li>
+                    <li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
+
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li><a class="nav-link text-dark" asp-area="Management" asp-controller="Management" asp-action="Index">Management</a></li>
@@ -63,11 +64,11 @@
             <section class="ftco-section ftco-no-pt ftco-no-pb">
                 <div class="container">
                     <div class="row d-flex">
-                        <div class="col-xl-8 py-4 px-md-4">
-                            <div class="row pt-md-1">
+                        <div class="col-xl-12 py-4 px-md-4">
+
                                 @RenderBody()
 
-                            </div><!-- END-->
+        
 
                         </div>
 

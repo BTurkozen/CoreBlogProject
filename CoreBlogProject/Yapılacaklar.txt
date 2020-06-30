@@ -1,4 +1,8 @@
-﻿search işlevsel hale getırılecek,
-role sistemi eklenip management kısmına authorize uygulanacak,
-photopath yerıne edıt ıcın current atanacak edit resim dendiginde deger dolu geldiği için resim duzelnlemesı yapamıyoruz.
-projeye viewModel kullanılmayan yerlere view model kullanılacak.
+﻿-search işlevsel hale getırılecek,
+-kendi yukledıgımız fotolarda sıkıntı yok ama elle yuklediklerimizde goruntulemede sorun var onun cozumu (:style="background-image:url(images/about.jpg)) bu sekılde uyarlamak
+-role sistemi eklenip management kısmına authorize uygulanacak,
+-photopath yerıne edıt ıcın current atanacak edit resim dendiginde deger dolu geldiği için resim duzelnlemesı yapamıyoruz.
+-projeye viewModel kullanılmayan yerlere view model kullanılacak.
+-İletişime geçmek isteyen oldugunda iletişim için mail gonderımı yaptırılacak.
+-
+-googlemap konulacak.

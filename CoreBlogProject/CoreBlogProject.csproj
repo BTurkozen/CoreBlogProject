@@ -40,8 +40,6 @@
   <ItemGroup>
     <Folder Include="Areas\Management\Data\" />
     <Folder Include="Areas\Management\Models\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="wwwroot\Images\" />
     <Folder Include="wwwroot\Images\Profile\" />
     <Folder Include="wwwroot\lib\bootstrap\" />
     <Folder Include="wwwroot\lib\bootstrap\dist\js\" />
