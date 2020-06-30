@@ -29,8 +29,6 @@ namespace CoreBlogProject.Controllers
             _postRepository = postRepository;
             _fileManager = fileManager;
             _dbContext = dbContext;
-            var comment = new MainComment();
-
         }
 
         public IActionResult Index(int pagenumber = 1, int pageSize = 5)
@@ -52,7 +50,8 @@ namespace CoreBlogProject.Controllers
         public async Task<IActionResult> Comment(CommentViewModel cvm)
         {
             if (!ModelState.IsValid)
-                return RedirectToAction("Post", new { Id = cvm.PostId });
+                //return RedirectToAction("Details", new { id = cvm.PostId });
+                return View(cvm.PostId);
 
             var post = _postRepository.GetPostId(cvm.PostId);
             if (cvm.MainCommentId == 0)
@@ -66,7 +65,7 @@ namespace CoreBlogProject.Controllers
 
                 });
                 _postRepository.UpdatePost(post);
-                return RedirectToAction("Details");
+
             }
             else
             {
@@ -80,7 +79,7 @@ namespace CoreBlogProject.Controllers
             }
             await _postRepository.SaveChangesAsync();
 
-            return View();
+            return RedirectToAction("Details", new { id = cvm.PostId });
         }
 
         public IActionResult Details(int id)
@@ -88,12 +87,6 @@ namespace CoreBlogProject.Controllers
             var post = _postRepository.GetPostId(id);
             return View(post);
         }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
