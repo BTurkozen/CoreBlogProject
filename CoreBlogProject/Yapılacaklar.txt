@@ -1,0 +1,4 @@
+﻿search işlevsel hale getırılecek,
+role sistemi eklenip management kısmına authorize uygulanacak,
+photopath yerıne edıt ıcın current atanacak edit resim dendiginde deger dolu geldiği için resim duzelnlemesı yapamıyoruz.
+projeye viewModel kullanılmayan yerlere view model kullanılacak.
