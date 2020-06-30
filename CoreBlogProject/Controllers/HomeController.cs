@@ -29,6 +29,7 @@ namespace CoreBlogProject.Controllers
             _postRepository = postRepository;
             _fileManager = fileManager;
             _dbContext = dbContext;
+            
         }
 
         public IActionResult Index(int pagenumber = 1, int pageSize = 5)
@@ -61,7 +62,7 @@ namespace CoreBlogProject.Controllers
                 {
                     PostId = cvm.PostId,
                     Message = cvm.Message,
-                    CreateTime = DateTime.Now
+                    CreateTime = DateTime.Now                    
 
                 });
                 _postRepository.UpdatePost(post);

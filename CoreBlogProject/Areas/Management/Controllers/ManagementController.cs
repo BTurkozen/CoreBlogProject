@@ -25,7 +25,8 @@ namespace CoreBlogProject.Areas.Management.Controllers
             {
                 CategoryCount = _dbContext.Categories.Count(),
                 PostCount = _dbContext.Posts.Count(),
-                UserCount = _dbContext.Users.Count()
+                UserCount = _dbContext.Users.Count(),
+                CommentCount = _dbContext.MainComments.Count()
             };
             return View(dvm);
         }
