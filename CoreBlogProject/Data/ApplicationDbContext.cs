@@ -24,6 +24,7 @@ namespace CoreBlogProject.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            
             base.OnModelCreating(builder);
 
             builder.Entity<Category>().HasData(new Category { CategoryId = 1, CategoryName = "Web Tasarım", Slug = "web-tasarım" });
